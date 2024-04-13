@@ -2,6 +2,9 @@
   <vCatalog />
   <div class="v-main-wrapper"></div>
   <vCart v-if="CART.length" :cart_data="CART" />
+    <div id=app>
+    <h2>My counter {{ counter }}</h2>
+  </div>
 </template>
 
 <script>
