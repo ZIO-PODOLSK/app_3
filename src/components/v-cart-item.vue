@@ -8,7 +8,7 @@
     </div>
     <div class="v-cart-item__count"></div>
     <p>Всего:</p>
-    <span>{{cart_item_data.quantity}}</span>
+    <span>{{ cart_item_data.quantity }}</span>
     <button @click="deleteFromCart" class="v-cart-item__delete">Удалить</button>
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
     deleteFromCart() {
       this.$emit("deleteFromCart");
     },
-  }
+  },
 };
 </script>
 
@@ -45,5 +45,9 @@ export default {
   box-shadow: 0 0 8px 0 grey;
   padding: 20px;
   margin: 20px;
+  width: 30%;
+}
+.v-cart-item_img {
+  width: 80px;
 }
 </style>

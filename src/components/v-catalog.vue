@@ -1,5 +1,11 @@
 <template>
   <h1>Наши вакансии</h1>
+  <router-link :to="{ name: 'cart', params: { cart_data: CART } }">
+    <div class="v-catalog__link_to_cart">
+      <i class="small material-icons">shopping_cart</i> {{ CART.length }}
+    </div>
+  </router-link>
+
   <div class="v-catalog">
     <div class="v-catalog_item">
       <vCatalogItem
@@ -24,7 +30,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["PRODUCTS"]),
+    ...mapGetters(["PRODUCTS", "CART"]),
     products() {
       return this.PRODUCTS;
     },
@@ -47,11 +53,18 @@ export default {
 </script>
 
 <style>
-.v-catalog, .v-catalog_item {
+.v-catalog,
+.v-catalog_item {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   /* flex-direction: column; */
+}
+
+.v-catalog__link_to_cart {
+  position: absolute;
+  top: 60px;
+  right: 60px;
 }
 </style>
