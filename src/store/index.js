@@ -12,9 +12,9 @@ export default createStore({
       state.products = products
     },
     SET_CART: (state, product) => {
-       state.cart.push(product)
+      state.cart.push(product)
     },
-    REMOVE_FROM_CART:(state, index) => {
+    REMOVE_FROM_CART: (state, index) => {
       state.cart.splice(index, 1)
     }
 
@@ -36,7 +36,7 @@ export default createStore({
     ADD_TO_CART({ commit }, product) {
       commit('SET_CART', product)
     },
-    DELETE_FROM_CART({commit}, index){
+    DELETE_FROM_CART({ commit }, index) {
       commit('REMOVE_FROM_CART', index)
     }
 
